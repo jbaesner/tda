@@ -1,0 +1,117 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+	http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.pironet</groupId>
+	<artifactId>tda</artifactId>
+
+	<packaging>jar</packaging>
+
+	<version>2.3.3-MAVENBUILD</version>
+	<url>https://github.com/irockel/tda</url>
+
+	<properties>
+
+        <!-- Explicitly declaring the source encoding eliminates the following
+                         message: [WARNING] Using platform encoding (UTF-8 actually) to copy 
+            filtered resources, i.e. build is platform dependent! -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<maven.eclipse.plugin.version>2.10</maven.eclipse.plugin.version>
+
+		<maven.jar.plugin.version>3.0.2</maven.jar.plugin.version>
+
+        <!-- maven-compiler-plugin -->
+		<maven.compiler.plugin.version>3.7.0</maven.compiler.plugin.version>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+	</properties>
+
+	<dependencies>
+		<dependency>
+            <groupId>sun.jdk</groupId>
+            <artifactId>jconsole</artifactId>
+            <version>jdk</version>
+            <scope>system</scope>
+            <systemPath>${java.home}/../lib/jconsole.jar</systemPath>
+		</dependency>
+<!--
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+-->
+	</dependencies>
+
+	<build>
+
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.html</include>
+					<include>**/*.gif</include>
+					<include>**/*.png</include>
+					<include>**/*.properties</include>
+					<include>**/doc/**</include>
+					<include>**/services/**</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/services/**</include>
+					<include>**/resources/**</include>
+				</includes>
+			</resource>
+		</resources>
+
+		<plugins>
+
+			<!-- download source code in Eclipse, best practice -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>${maven.eclipse.plugin.version}</version>
+				<configuration>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>false</downloadJavadocs>
+				</configuration>
+			</plugin>
+
+			<!-- Set a JDK compiler level -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.plugin.version}</version>
+				<configuration>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+				</configuration>
+			</plugin>
+
+			<!-- Make this jar executable -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>${maven.jar.plugin.version}</version>
+				<configuration>
+				  <archive>
+					<manifest>
+						<!-- Jar file entry point -->
+						<mainClass>com.pironet.tda.TDA</mainClass>
+					</manifest>
+					<manifestEntries>
+						<SplashScreen-Image>com/pironet/tda/icons/splash.png</SplashScreen-Image>
+					</manifestEntries>
+				  </archive>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>
