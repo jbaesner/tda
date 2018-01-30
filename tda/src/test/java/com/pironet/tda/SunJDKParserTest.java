@@ -60,7 +60,7 @@ public class SunJDKParserTest extends TestCase {
         DumpParser instance = null;
         
         try {
-            fis = new FileInputStream("test/none/test.log");
+            fis = new FileInputStream("src/test/resources/test.log");
             Map dumpMap = new HashMap();
             Vector topNodes = new Vector();
             instance = DumpParserFactory.get().getDumpParserForLogfile(fis, dumpMap, false, 0);
@@ -91,7 +91,7 @@ public class SunJDKParserTest extends TestCase {
         DumpParser instance = null;
         FileInputStream fis = null;
         try {
-            fis = new FileInputStream("test/none/testwithhistogram.log");
+            fis = new FileInputStream("src/test/resources/testwithhistogram.log");
             Map dumpMap = new HashMap();
             instance = DumpParserFactory.get().getDumpParserForLogfile(fis, dumpMap, false, 0);
             
@@ -119,7 +119,7 @@ public class SunJDKParserTest extends TestCase {
         DumpParser instance = null;
         
         try {
-            fis = new FileInputStream("test/none/test64bit.log");
+            fis = new FileInputStream("src/test/resources/test64bit.log");
             Map dumpMap = new HashMap();
             Vector topNodes = new Vector();
             instance = DumpParserFactory.get().getDumpParserForLogfile(fis, dumpMap, false, 0);
@@ -148,7 +148,7 @@ public class SunJDKParserTest extends TestCase {
         DumpParser instance = null;
         
         try {
-            fis = new FileInputStream("test/none/java8dump.log");
+            fis = new FileInputStream("src/test/resources/java8dump.log");
             Map dumpMap = new HashMap();
             Vector topNodes = new Vector();
             instance = DumpParserFactory.get().getDumpParserForLogfile(fis, dumpMap, false, 0);
@@ -177,7 +177,7 @@ public class SunJDKParserTest extends TestCase {
         DumpParser instance = null;
         
         try {
-            fis = new FileInputStream("test/none/sapdump.log");
+            fis = new FileInputStream("src/test/resources/sapdump.log");
             Map dumpMap = new HashMap();
             Vector topNodes = new Vector();
             instance = DumpParserFactory.get().getDumpParserForLogfile(fis, dumpMap, false, 0);
@@ -206,7 +206,7 @@ public class SunJDKParserTest extends TestCase {
         DumpParser instance = null;
         
         try {
-            fis = new FileInputStream("test/none/hpdump.log");
+            fis = new FileInputStream("src/test/resources/hpdump.log");
             Map dumpMap = new HashMap();
             Vector topNodes = new Vector();
             instance = DumpParserFactory.get().getDumpParserForLogfile(fis, dumpMap, false, 0);
@@ -235,7 +235,7 @@ public class SunJDKParserTest extends TestCase {
         DumpParser instance = null;
 
         try {
-            fis = new FileInputStream("test/none/visualvmremote.log");
+            fis = new FileInputStream("src/test/resources/visualvmremote.log");
             Map dumpMap = new HashMap();
             Vector topNodes = new Vector();
             instance = DumpParserFactory.get().getDumpParserForLogfile(fis, dumpMap, false, 0);
@@ -264,7 +264,7 @@ public class SunJDKParserTest extends TestCase {
         DumpParser instance = null;
         
         try {
-            fis = new FileInputStream("test/none/urlthread.log");
+            fis = new FileInputStream("src/test/resources/urlthread.log");
             Map dumpMap = new HashMap();
             Vector topNodes = new Vector();
             instance = DumpParserFactory.get().getDumpParserForLogfile(fis, dumpMap, false, 0);
