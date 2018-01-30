@@ -63,7 +63,7 @@ public class BeaJDKParserTest extends TestCase {
         DumpParser instance = null;
         
         try {
-            fis = new FileInputStream("test/none/jrockit_15_dump.txt");
+            fis = new FileInputStream("src/test/resources/jrockit_15_dump.txt");
             Map dumpMap = new HashMap();
             Vector topNodes = new Vector();
             instance = DumpParserFactory.get().getDumpParserForLogfile(fis, dumpMap, false, 0);

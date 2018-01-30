@@ -46,6 +46,7 @@ public class TdaSuite extends TestCase {
         TestSuite suite = new TestSuite("TdaSuite");
         suite.addTest(com.pironet.tda.DumpParserFactoryTest.suite());
         suite.addTest(com.pironet.tda.SunJDKParserTest.suite());
+        suite.addTest(com.pironet.tda.BeaJDKParserTest.suite());
         return suite;
     }
     
