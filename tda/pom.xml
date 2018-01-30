@@ -26,6 +26,8 @@
 		<maven.compiler.plugin.version>3.7.0</maven.compiler.plugin.version>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
+        
+        <junit.version>4.12</junit.version>
 	</properties>
 
 	<dependencies>
@@ -36,14 +38,12 @@
             <scope>system</scope>
             <systemPath>${java.home}/../lib/jconsole.jar</systemPath>
 		</dependency>
-<!--
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
--->
 	</dependencies>
 
 	<build>
